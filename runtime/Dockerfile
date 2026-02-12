@@ -11,8 +11,8 @@ ARG USER_GID=$USER_UID
 # install dependencies
 ENV DEBIAN_FRONTEND=noninteractive
 RUN set -eux; \
-    apt-get update; \
-    apt-get install -y --no-install-recommends \
+    apt-get -o Acquire::Retries=5 update; \
+    apt-get -o Acquire::Retries=5 install -y --no-install-recommends \
         wget ca-certificates python2 supervisor \
         pulseaudio dbus-x11 xserver-xorg-video-dummy \
         libcairo2 libxcb1 libxrandr2 libxv1 libopus0 libvpx6 \
@@ -30,8 +30,8 @@ RUN set -eux; \
     #
     # install libxcvt0 (not available in debian:bullseye)
     ARCH=$(dpkg --print-architecture); \
-    wget http://ftp.de.debian.org/debian/pool/main/libx/libxcvt/libxcvt0_0.1.2-1_${ARCH}.deb; \
-    apt-get install --no-install-recommends ./libxcvt0_0.1.2-1_${ARCH}.deb; \
+    wget --tries=5 --waitretry=2 --retry-connrefused http://deb.debian.org/debian/pool/main/libx/libxcvt/libxcvt0_0.1.2-1_${ARCH}.deb; \
+    apt-get -o Acquire::Retries=5 install --no-install-recommends ./libxcvt0_0.1.2-1_${ARCH}.deb; \
     rm ./libxcvt0_0.1.2-1_${ARCH}.deb; \
     #
     # create a non-root user
@@ -56,7 +56,7 @@ RUN set -eux; \
     chown -R $USERNAME:$USERNAME /home/$USERNAME; \
     #
     # install fonts
-    apt-get install -y --no-install-recommends \
+    apt-get -o Acquire::Retries=5 install -y --no-install-recommends \
         # Emojis
         fonts-noto-color-emoji \
         # Chinese fonts
@@ -110,3 +110,4 @@ HEALTHCHECK --interval=10s --timeout=5s --retries=8 \
 #
 # run neko
 CMD ["/usr/bin/supervisord", "-c", "/etc/neko/supervisord.conf"]
+

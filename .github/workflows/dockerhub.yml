@@ -21,7 +21,7 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  DOCKER_IMAGE: docker.io/cryptic-stack/ocatl-neko
+  DOCKER_IMAGE: ${{ vars.DOCKER_IMAGE || 'docker.io/cryptic-stack/ocatl-neko' }}
   DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME || vars.DOCKERHUB_USERNAME || github.actor }}
 
 jobs:
