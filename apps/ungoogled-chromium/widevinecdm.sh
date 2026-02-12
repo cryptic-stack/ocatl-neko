@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -e
+set -euo pipefail
 
 TARGET_DIR="$(realpath "$1")"
 if [ -z "$TARGET_DIR" ]; then
@@ -30,13 +30,22 @@ for v in data['vendors'].values():
 curl -L -o widevinecdm.crx "$URL"
 
 # Install go-crx3
-echo "Fetching latest go-crx3 version..."
-VERSION=$(curl -s https://api.github.com/repos/m1k1o/go-crx3/releases/latest | grep 'tag_name' | cut -d '"' -f4)
-ARTIFACT="go-crx3_${VERSION#v}_linux_amd64.tar.gz"
-URL="https://github.com/m1k1o/go-crx3/releases/download/${VERSION}/${ARTIFACT}"
-echo "Downloading $URL"
-curl -L -o "$ARTIFACT" "$URL"
-tar -xzf "$ARTIFACT"
+echo "Resolving latest go-crx3 release..."
+GO_CRX3_RELEASE_JSON="$(curl -fsSL https://api.github.com/repos/m1k1o/go-crx3/releases/latest || true)"
+GO_CRX3_URL="$(
+    printf '%s' "$GO_CRX3_RELEASE_JSON" \
+    | jq -r '.assets[]?.browser_download_url | select(test("linux_amd64\\.tar\\.gz$"))' \
+    | head -n1
+)"
+
+if [ -z "$GO_CRX3_URL" ]; then
+    GO_CRX3_URL="https://github.com/m1k1o/go-crx3/releases/download/v1.6.1/go-crx3_1.6.1_linux_amd64.tar.gz"
+    echo "GitHub API did not return a usable release asset, using fallback: $GO_CRX3_URL"
+fi
+
+echo "Downloading $GO_CRX3_URL"
+curl -fL -o go-crx3.tar.gz "$GO_CRX3_URL"
+tar -xzf go-crx3.tar.gz
 
 # Unpack with go-crx3
 ./go-crx3 unpack widevinecdm.crx
