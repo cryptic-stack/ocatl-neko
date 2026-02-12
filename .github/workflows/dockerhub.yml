@@ -6,6 +6,7 @@ on:
       - master
     paths-ignore:
       - 'webpage/**'
+  workflow_dispatch:
   #
   # Run this action periodically to keep browsers up-to-date
   # even if there is no activity in this repo.
@@ -127,5 +128,188 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
           build-args: |
             BASE_IMAGE=${{ env.DOCKER_IMAGE }}:base
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+  build-base-intel:
+    name: Base Image (Intel)
+    runs-on: ubuntu-latest
+    if: github.repository_owner == 'cryptic-stack' && vars.ENABLE_DOCKERHUB == 'true'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Extract metadata (tags, labels) for Docker
+        uses: docker/metadata-action@v5
+        id: meta
+        with:
+          images: ${{ env.DOCKER_IMAGE }}
+          tags: |
+            type=raw,value=intel-base
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ github.actor }}
+          password: ${{ secrets.DOCKER_TOKEN }}
+
+      - name: Build and push
+        uses: docker/build-push-action@v6
+        with:
+          context: ./runtime
+          file: ./runtime/Dockerfile.intel
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+  build-app-intel:
+    name: App Image (Intel)
+    runs-on: ubuntu-latest
+    if: github.repository_owner == 'cryptic-stack' && vars.ENABLE_DOCKERHUB == 'true'
+    needs: build-base-intel
+    strategy:
+      fail-fast: false
+      matrix:
+        tag:
+          - firefox
+          - chromium
+          - google-chrome
+          - ungoogled-chromium
+          - microsoft-edge
+          - brave
+          - vivaldi
+          - opera
+          - tor-browser
+          - remmina
+          - vlc
+          - xfce
+          - kde
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Extract metadata (tags, labels) for Docker
+        uses: docker/metadata-action@v5
+        id: meta
+        with:
+          images: ${{ env.DOCKER_IMAGE }}
+          tags: |
+            type=raw,value=intel-${{ matrix.tag }}
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ github.actor }}
+          password: ${{ secrets.DOCKER_TOKEN }}
+
+      - name: Build and push
+        uses: docker/build-push-action@v6
+        with:
+          context: apps/${{ matrix.tag }}
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          build-args: |
+            BASE_IMAGE=${{ env.DOCKER_IMAGE }}:intel-base
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+  build-base-nvidia:
+    name: Base Image (Nvidia)
+    runs-on: ubuntu-latest
+    if: github.repository_owner == 'cryptic-stack' && vars.ENABLE_DOCKERHUB == 'true'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Extract metadata (tags, labels) for Docker
+        uses: docker/metadata-action@v5
+        id: meta
+        with:
+          images: ${{ env.DOCKER_IMAGE }}
+          tags: |
+            type=raw,value=nvidia-base
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ github.actor }}
+          password: ${{ secrets.DOCKER_TOKEN }}
+
+      - name: Build and push
+        uses: docker/build-push-action@v6
+        with:
+          context: ./runtime
+          file: ./runtime/Dockerfile.nvidia
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+  build-app-nvidia:
+    name: App Image (Nvidia)
+    runs-on: ubuntu-latest
+    if: github.repository_owner == 'cryptic-stack' && vars.ENABLE_DOCKERHUB == 'true'
+    needs: build-base-nvidia
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - tag: firefox
+          - tag: brave
+          - tag: chromium
+          - tag: google-chrome
+          - tag: microsoft-edge
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Extract metadata (tags, labels) for Docker
+        uses: docker/metadata-action@v5
+        id: meta
+        with:
+          images: ${{ env.DOCKER_IMAGE }}
+          tags: |
+            type=raw,value=nvidia-${{ matrix.tag }}
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ github.actor }}
+          password: ${{ secrets.DOCKER_TOKEN }}
+
+      - name: Build and push
+        uses: docker/build-push-action@v6
+        with:
+          context: apps/${{ matrix.tag }}
+          file: apps/${{ matrix.tag }}/Dockerfile.nvidia
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          build-args: |
+            BASE_IMAGE=${{ env.DOCKER_IMAGE }}:nvidia-base
           cache-from: type=gha
           cache-to: type=gha,mode=max
