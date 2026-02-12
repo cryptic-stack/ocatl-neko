@@ -116,9 +116,6 @@ Upstream documentation is available at [neko.m1k1o.net](https://neko.m1k1o.net/)
 
 Contributions are welcome! Check the [Contributing Guide](https://neko.m1k1o.net/contributing) for details.
 
-## Support
-
-If you find this stack useful, consider supporting the upstream project via [GitHub Sponsors](https://github.com/sponsors/m1k1o).
 
 
 
