@@ -22,6 +22,7 @@ concurrency:
 
 env:
   DOCKER_IMAGE: docker.io/cryptic-stack/ocatl-neko
+  DOCKERHUB_USERNAME: ${{ vars.DOCKERHUB_USERNAME || github.actor }}
 
 jobs:
   build-base:
@@ -51,7 +52,7 @@ jobs:
       - name: Login to Docker Hub
         uses: docker/login-action@v3
         with:
-          username: ${{ github.actor }}
+          username: ${{ env.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKER_TOKEN }}
 
       - name: Generate base Dockerfile
@@ -116,7 +117,7 @@ jobs:
       - name: Login to Docker Hub
         uses: docker/login-action@v3
         with:
-          username: ${{ github.actor }}
+          username: ${{ env.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKER_TOKEN }}
 
       - name: Build and push
@@ -155,7 +156,7 @@ jobs:
       - name: Login to Docker Hub
         uses: docker/login-action@v3
         with:
-          username: ${{ github.actor }}
+          username: ${{ env.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKER_TOKEN }}
 
       - name: Build and push
@@ -211,7 +212,7 @@ jobs:
       - name: Login to Docker Hub
         uses: docker/login-action@v3
         with:
-          username: ${{ github.actor }}
+          username: ${{ env.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKER_TOKEN }}
 
       - name: Build and push
@@ -250,7 +251,7 @@ jobs:
       - name: Login to Docker Hub
         uses: docker/login-action@v3
         with:
-          username: ${{ github.actor }}
+          username: ${{ env.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKER_TOKEN }}
 
       - name: Build and push
@@ -298,7 +299,7 @@ jobs:
       - name: Login to Docker Hub
         uses: docker/login-action@v3
         with:
-          username: ${{ github.actor }}
+          username: ${{ env.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKER_TOKEN }}
 
       - name: Build and push
@@ -313,3 +314,4 @@ jobs:
             BASE_IMAGE=${{ env.DOCKER_IMAGE }}:nvidia-base
           cache-from: type=gha
           cache-to: type=gha,mode=max
+
