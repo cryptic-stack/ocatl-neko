@@ -18,7 +18,7 @@ If you want to access Neko over a VPN, you need to set NAT1TO1 to your server's 
 ```yaml title="docker-compose.yaml"
 services:
   neko:
-    image: "ghcr.io/m1k1o/neko/firefox:latest"
+    image: "ghcr.io/cryptic-stack/octal-neko/firefox:latest"
     restart: "unless-stopped"
     shm_size: "2gb"
     ports:
@@ -39,7 +39,7 @@ Start neko with TCP multiplexing enabled and NAT1to1 set to loopback address. Th
 ```yaml title="docker-compose.yaml"
 services:
   neko:
-    image: "ghcr.io/m1k1o/neko/nvidia-firefox:latest"
+    image: "ghcr.io/cryptic-stack/octal-neko/nvidia-firefox:latest"
     restart: "unless-stopped"
     shm_size: "2gb"
     ports:

@@ -9,7 +9,7 @@ Currently there is no configuration for customizing the UI of Neko. You need to 
 
 ```bash
 # Clone the repository
-git clone https://github.com/m1k1o/neko
+git clone https://github.com/cryptic-stack/octal-neko
 # Change to the client directory
 cd neko/client
 # Install the dependencies
@@ -23,7 +23,7 @@ You can mount your newly created UI files to the container to `/var/www` to over
 ```yaml title="docker-compose.yaml"
 services:
   neko:
-    image: "ghcr.io/m1k1o/neko/firefox:latest"
+    image: "ghcr.io/cryptic-stack/octal-neko/firefox:latest"
     restart: "unless-stopped"
     shm_size: "2gb"
     ports:

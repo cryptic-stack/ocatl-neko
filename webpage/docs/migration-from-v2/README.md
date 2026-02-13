@@ -12,9 +12,9 @@ If you set both V3 and V2 configuration options, the V2 configuration options wi
 
 ## Docker Images {#docker}
 
-Previously, neko was available primarily on Dockerhub as `m1k1o/neko`. While it stays as an option there, now the primary location is `ghcr.io/m1k1o/neko`.
+Previously, neko was available primarily on Dockerhub as `m1k1o/neko`. While it stays as an option there, now the primary location is `ghcr.io/cryptic-stack/octal-neko`.
 
-ARM images were previously available as an flavor e.g. `m1k1o/neko:arm-firefox` or `ghcr.io/m1k1o/neko/arm-firefox`. Now, the ARM images are available as multi-arch images under the same tags as the amd64 images., e.g. `ghcr.io/m1k1o/neko/firefox`.
+ARM images were previously available as an flavor e.g. `crypticstack/octal-neko:arm-firefox` or `ghcr.io/cryptic-stack/octal-neko/arm-firefox`. Now, the ARM images are available as multi-arch images under the same tags as the amd64 images., e.g. `ghcr.io/cryptic-stack/octal-neko/firefox`.
 
 All applications available in the V2 images are also available in the V3 images. See the [Docker Images](/docs/v3/installation/docker-images) documentation for more details.
 

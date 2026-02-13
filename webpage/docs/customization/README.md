@@ -24,7 +24,7 @@ For example, with firefox, you can mount your own `firefox.conf` file to the dir
 
 ```bash
 # Create a container without starting it
-docker create --name neko ghcr.io/m1k1o/neko/firefox:latest
+docker create --name neko ghcr.io/cryptic-stack/octal-neko/firefox:latest
 # Copy the default configuration file to your local machine
 docker cp neko:/etc/neko/supervisord/firefox.conf ./firefox.conf
 # Remove the container
@@ -36,7 +36,7 @@ Then, you can modify the configuration file to your liking and mount your new ve
 ```yaml title="docker-compose.yaml"
 services:
   neko:
-    image: "ghcr.io/m1k1o/neko/firefox:latest"
+    image: "ghcr.io/cryptic-stack/octal-neko/firefox:latest"
     restart: "unless-stopped"
     shm_size: "2gb"
     ports:

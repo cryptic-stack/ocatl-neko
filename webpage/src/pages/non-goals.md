@@ -3,7 +3,7 @@
 The following are not within the scope of this project:
 
 **Turning neko into a service that serves multiple rooms and browsers/desktops.**
-* If you need software for managing multiple rooms, please use [neko-rooms](https://github.com/m1k1o/neko-rooms).
+* If you need software for managing multiple rooms, please use [neko-rooms](https://github.com/cryptic-stack/octal-neko-rooms).
 
 **Supporting multiple platforms.**
 * This project is focused on a specific set of platforms and does not aim to support all possible platforms.

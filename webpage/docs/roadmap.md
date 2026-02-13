@@ -4,7 +4,7 @@ The roadmap outlines the future development plans for Neko. It is divided into t
 
 ## Phase 1 - Server migration to V3 {#phase-1}
 
-This phase was successfully completed with the release of Neko V3.0.0. The [m1k1o/neko](https://github.com/m1k1o/neko) server was merged with the archived [demodesk/neko](https://github.com/demodesk/neko) server, and the new server was released as V3.0.0. A compatibility layer was added to support V2 clients.
+This phase was successfully completed with the release of Neko V3.0.0. The [m1k1o/neko](https://github.com/cryptic-stack/octal-neko) server was merged with the archived [demodesk/neko](https://github.com/demodesk/neko) server, and the new server was released as V3.0.0. A compatibility layer was added to support V2 clients.
 
 ## Phase 2 - Client rewrite to V3 {#phase-2}
 

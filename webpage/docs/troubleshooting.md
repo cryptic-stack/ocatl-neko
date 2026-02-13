@@ -26,7 +26,7 @@ In the following example, the specified range `52000-52100` must also be exposed
 ```yaml title="docker-compose.yaml"
 services:
   neko:
-    image: "ghcr.io/m1k1o/neko/firefox:latest"
+    image: "ghcr.io/cryptic-stack/octal-neko/firefox:latest"
     restart: "unless-stopped"
     shm_size: "2gb"
     ports:
@@ -94,7 +94,7 @@ If your IP is not correct, you can specify your own IP resolver using [`NEKO_WEB
 ```yaml title="docker-compose.yaml"
 services:
   neko:
-    image: "ghcr.io/m1k1o/neko/firefox:latest"
+    image: "ghcr.io/cryptic-stack/octal-neko/firefox:latest"
     restart: "unless-stopped"
     shm_size: "2gb"
     ports:
@@ -116,7 +116,7 @@ Or you can specify your IP address manually using [`NEKO_WEBRTC_NAT1TO1`](/docs/
 ```yaml title="docker-compose.yaml"
 services:
   neko:
-    image: "ghcr.io/m1k1o/neko/firefox:latest"
+    image: "ghcr.io/cryptic-stack/octal-neko/firefox:latest"
     restart: "unless-stopped"
     shm_size: "2gb"
     ports:
@@ -168,7 +168,7 @@ Check if you did not forget to add `cap_add` to your `docker-compose.yaml` file.
 ```yaml title="docker-compose.yaml"
 services:
   neko:
-    image: "ghcr.io/m1k1o/neko/chromium:latest"
+    image: "ghcr.io/cryptic-stack/octal-neko/chromium:latest"
     # highlight-start
     cap_add:
     - SYS_ADMIN
@@ -196,7 +196,7 @@ You can specify a custom DNS server in the Docker file using the `--dns` flag or
 ```yaml title="docker-compose.yaml"
 services:
   neko:
-    image: "ghcr.io/m1k1o/neko/chromium:latest"
+    image: "ghcr.io/cryptic-stack/octal-neko/chromium:latest"
     # highlight-start
     dns:
     - 1.1.1.1
@@ -330,7 +330,7 @@ These are just logs from pulseaudio. Unless you have audio issues, you can ignor
 
 ### Broadcast pipeline not working with some ingest servers {#broadcast-pipeline-not-working}
 
-See [related issue](https://github.com/m1k1o/neko/issues/276).
+See [related issue](https://github.com/cryptic-stack/octal-neko/issues/276).
 
 ```
 Could not connect to RTMP stream "'rtmp://<ingest-url>/live/<stream-key-removed> live=1'" for writing

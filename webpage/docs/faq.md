@@ -11,7 +11,7 @@ If you want to debug [Pion WebRTC](https://github.com/pion/webrtc), you can set 
 ```yaml title="docker-compose.yaml"
 services:
   neko:
-    image: "ghcr.io/m1k1o/neko/firefox:latest"
+    image: "ghcr.io/cryptic-stack/octal-neko/firefox:latest"
     restart: "unless-stopped"
     shm_size: "2gb"
     ports:

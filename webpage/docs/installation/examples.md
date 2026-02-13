@@ -11,7 +11,7 @@ Here are some examples to get you started with Neko. You can use these examples 
 ```yaml title="docker-compose.yaml"
 services:
   neko:
-    image: "ghcr.io/m1k1o/neko/firefox:latest"
+    image: "ghcr.io/cryptic-stack/octal-neko/firefox:latest"
     restart: "unless-stopped"
     shm_size: "2gb"
     ports:
@@ -33,7 +33,7 @@ services:
 ```yaml title="docker-compose.yaml"
 services:
   neko:
-    image: "ghcr.io/m1k1o/neko/chromium:latest"
+    image: "ghcr.io/cryptic-stack/octal-neko/chromium:latest"
     restart: "unless-stopped"
     shm_size: "2gb"
     cap_add:
@@ -57,7 +57,7 @@ services:
 ```yaml title="docker-compose.yaml"
 services:
   neko:
-    image: "ghcr.io/m1k1o/neko/vlc:latest"
+    image: "ghcr.io/cryptic-stack/octal-neko/vlc:latest"
     restart: "unless-stopped"
     shm_size: "2gb"
     cap_add:
@@ -81,7 +81,7 @@ services:
 ```yaml title="docker-compose.yaml"
 services:
   neko:
-    image: "ghcr.io/m1k1o/neko/chromium:latest"
+    image: "ghcr.io/cryptic-stack/octal-neko/chromium:latest"
     restart: "unless-stopped"
     # increase on rpi's with more then 1gb ram.
     shm_size: "520mb"
@@ -120,7 +120,7 @@ This example shows how to accelerate video encoding and as well the browser rend
 ```yaml title="docker-compose.yaml"
 services:
   neko:
-    image: "ghcr.io/m1k1o/neko/nvidia-firefox:latest"
+    image: "ghcr.io/cryptic-stack/octal-neko/nvidia-firefox:latest"
     restart: "unless-stopped"
     shm_size: "2gb"
     ports:
@@ -171,7 +171,7 @@ If you only want to accelerate the encoding, **not the browser rendering**, and 
 services:
   neko:
     # highlight-next-line
-    image: "ghcr.io/m1k1o/neko/firefox:latest"
+    image: "ghcr.io/cryptic-stack/octal-neko/firefox:latest"
     restart: "unless-stopped"
     shm_size: "2gb"
     ports:

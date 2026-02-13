@@ -14,7 +14,7 @@ docker run -d --rm \
   -e NEKO_WEBRTC_NAT1TO1=127.0.0.1 \
   -e NEKO_MEMBER_MULTIUSER_USER_PASSWORD=neko \
   -e NEKO_MEMBER_MULTIUSER_ADMIN_PASSWORD=admin \
-  ghcr.io/m1k1o/neko/firefox:latest
+  ghcr.io/cryptic-stack/octal-neko/firefox:latest
 ```
 
 ### Explanation {#docker-run-explanation}
@@ -34,7 +34,7 @@ docker run -d --rm \
 - `-e NEKO_MEMBER_MULTIUSER_ADMIN_PASSWORD=admin` - Set the password for the admin account.
   - See [Multiuser Configuration](/docs/v3/configuration/authentication#member.multiuser) for more information about this setting.
   - There are other authentication providers available, see [Authentication Providers](/docs/v3/configuration/authentication#member).
-- `ghcr.io/m1k1o/neko/firefox:latest` - The Docker image to use.
+- `ghcr.io/cryptic-stack/octal-neko/firefox:latest` - The Docker image to use.
   - See available [Docker Images](/docs/v3/installation/docker-images).
 
 Now, open your browser and go to: `http://localhost:8080`. You should see the Neko interface.
@@ -52,7 +52,7 @@ Create a `docker-compose.yml` file with the following content:
 ```yaml title="docker-compose.yaml"
 services:
   neko:
-    image: ghcr.io/m1k1o/neko/firefox:latest
+    image: ghcr.io/cryptic-stack/octal-neko/firefox:latest
     restart: unless-stopped
     ports:
       - "8080:8080"

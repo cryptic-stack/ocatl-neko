@@ -3,20 +3,20 @@
 ## master {#master}
 
 ### New Features {#master-feats}
-- Scroll to chat on mobile ([#496](https://github.com/m1k1o/neko/pull/496))
-- Added mobile keyboard icon to open the keyboard on mobile devices ([#497](https://github.com/m1k1o/neko/pull/497))
+- Scroll to chat on mobile ([#496](https://github.com/cryptic-stack/octal-neko/pull/496))
+- Added mobile keyboard icon to open the keyboard on mobile devices ([#497](https://github.com/cryptic-stack/octal-neko/pull/497))
 
 ### Fixes {#master-fixes}
 - Fixed various bugs related to the legacy client and migration.
-- Fixed long standing issue [#279](https://github.com/m1k1o/neko/pull/279) where Google Chrome GPU acceleration did not work with Nvidia GPUs, thanks to [@TobyColeman](https://github.com/TobyColeman), [@alexbakerdev](https://github.com/alexbakerdev) and [@samstefan](https://github.com/samstefan) from [@wearewildcards](https://github.com/wearewildcards).
+- Fixed long standing issue [#279](https://github.com/cryptic-stack/octal-neko/pull/279) where Google Chrome GPU acceleration did not work with Nvidia GPUs, thanks to [@TobyColeman](https://github.com/TobyColeman), [@alexbakerdev](https://github.com/alexbakerdev) and [@samstefan](https://github.com/samstefan) from [@wearewildcards](https://github.com/wearewildcards).
 
 ### Misc {#master-misc}
-- Added an https condition to the healthcheck ([#503](https://github.com/m1k1o/neko/pull/503), by @Garrulousbrevity).
+- Added an https condition to the healthcheck ([#503](https://github.com/cryptic-stack/octal-neko/pull/503), by @Garrulousbrevity).
 
-## [n.eko v3.0.0](https://github.com/m1k1o/neko/releases/tag/v3.0.0) {#v3.0.0}
+## [n.eko v3.0.0](https://github.com/cryptic-stack/octal-neko/releases/tag/v3.0.0) {#v3.0.0}
 
 ### Repository Changes {#v3.0.0-repo}
-- The default registry is now `ghcr.io/m1k1o/neko` instead of `docker.io/m1k1o/neko`.
+- The default registry is now `ghcr.io/cryptic-stack/octal-neko` instead of `docker.io/crypticstack/octal-neko`.
 - Multiarch builds for `linux/amd64`, `linux/arm64`, and `linux/arm/v7` are now available instead of `arm-`based images.
 - App folders from `.docker/` have been moved to `apps/`.
 - Dev scripts from `.docker/` are now available in `client/dev/` and `server/dev/`.
@@ -68,7 +68,7 @@
 
 Please note that in this version, only the server has been updated. The client is still in the old version; therefore, new features may not yet be available in the client.
 
-## [n.eko v2.9.0](https://github.com/m1k1o/neko/releases/tag/v2.9.0) {#v2.9.0}
+## [n.eko v2.9.0](https://github.com/cryptic-stack/octal-neko/releases/tag/v2.9.0) {#v2.9.0}
 
 ### New Features {#v2.9.0-feats}
 - Added nvidia support for firefox.
@@ -79,22 +79,22 @@ Please note that in this version, only the server has been updated. The client i
 
 ### Bugs {#v2.9.0-bugs}
 - Fix incorrect version sorting for chromium, microsoft-edge, opera and ungoogledchromium.
-- Fix buffer overflow in Gstreamer log function [#382](https://github.com/m1k1o/neko/pull/382) (by @tt2468).
+- Fix buffer overflow in Gstreamer log function [#382](https://github.com/cryptic-stack/octal-neko/pull/382) (by @tt2468).
 
 ### Misc {#v2.9.0-misc}
-- Added RTMP broadcast support to nvidia docker image [#274](https://github.com/m1k1o/neko/issues/274).
-- Ensured that paths are writable by neko user [#277](https://github.com/m1k1o/neko/issues/277).
+- Added RTMP broadcast support to nvidia docker image [#274](https://github.com/cryptic-stack/octal-neko/issues/274).
+- Ensured that paths are writable by neko user [#277](https://github.com/cryptic-stack/octal-neko/issues/277).
 - Git commit and tag are now included in the build when creating a docker image.
 - Remove any temporary files associated with a Form after file upload, that would be otherwise never removed.
 - Add check for volume parameter in URL before setting volume (by @FapFapDragon).
-- Add glib main loop to capture manager [#383](https://github.com/m1k1o/neko/pull/383) (by @tt2468).
+- Add glib main loop to capture manager [#383](https://github.com/cryptic-stack/octal-neko/pull/383) (by @tt2468).
 - Sync clipboard only if in focus.
 
-## [n.eko v2.8.0](https://github.com/m1k1o/neko/releases/tag/v2.8.0) {#v2.8.0}
+## [n.eko v2.8.0](https://github.com/cryptic-stack/octal-neko/releases/tag/v2.8.0) {#v2.8.0}
 
 ### New Features {#v2.8.0-feats}
 - Added AV1 tag, metadata and pipeline. Unfortunately does not work yet, since the encoding is way too slow (by @mbattista).
-- Added `m1k1o/neko:kde` tag as an alternative to `m1k1o/neko:xfce`.
+- Added `crypticstack/octal-neko:kde` tag as an alternative to `crypticstack/octal-neko:xfce`.
 - New VirtualGL version 3.1 was released, adding support for Chromium browsers to use Nvidia GPU acceleration!
 - Added `?embed=1` parameter to the URL, which will hide the sidebar and the top bar, so that it can be embedded in other websites.
 - Added `?volume=<0-1>` parameter to the URL, which will set the inital volume of the player (by @urbanekpj).
@@ -119,11 +119,11 @@ Please note that in this version, only the server has been updated. The client i
 - Renamed pulseaudio sink from `auto_null` to `audio_output`, because it was ignored by KDE.
 - Pulseaudio is now configured using environment variables, so that users can mount `/home/neko` without losing audio configuration.
 
-## [n.eko v2.7](https://github.com/m1k1o/neko/releases/tag/v2.7) {#v2.7}
+## [n.eko v2.7](https://github.com/cryptic-stack/octal-neko/releases/tag/v2.7) {#v2.7}
 
 ### New Features {#v2.7-feats}
-- Added `m1k1o/neko:vivaldi` tag (thanks @Xeddius).
-- Added `m1k1o/neko:opera` tag (thanks @prophetofxenu).
+- Added `crypticstack/octal-neko:vivaldi` tag (thanks @Xeddius).
+- Added `crypticstack/octal-neko:opera` tag (thanks @prophetofxenu).
 - Added `NEKO_PATH_PREFIX`.
 - Added screenshot function `/screenshot.jpg?pwd=<admin>`, works only for unlocked rooms.
 - Added emoji support (by @yesBad).
@@ -136,18 +136,18 @@ Please note that in this version, only the server has been updated. The client i
 - Added CORS.
 - Opera versions are not hardcoded in Dockerfile anymore but automatically are fetch latest.
 
-## [n.eko v2.6](https://github.com/m1k1o/neko/releases/tag/v2.6) {#v2.6}
+## [n.eko v2.6](https://github.com/cryptic-stack/octal-neko/releases/tag/v2.6) {#v2.6}
 
 ### Bugs {#v2.6-bugs}
-- Fixed fullscreen incompatibility for Safari [#121](https://github.com/m1k1o/neko/issues/121).
+- Fixed fullscreen incompatibility for Safari [#121](https://github.com/cryptic-stack/octal-neko/issues/121).
 - Fixed bad emoji matching for e.g. `:+1:` and `:100:` with new regex `/^:([^:\s]+):/`.
 
 ### New Features {#v2.6-feats}
-- Added `m1k1o/neko:microsoft-edge` tag.
+- Added `crypticstack/octal-neko:microsoft-edge` tag.
 - Fixed clipboard sync in chromium based browsers.
 - Added support for implicit control (using `NEKO_IMPLICITCONTROL=1`). That means, users do not need to request control prior usage.
 - Automatically start broadcasting using `NEKO_BROADCAST_URL=rtmp://your-rtmp-endpoint/live` (thanks @konsti).
-- Added `m1k1o/neko:remmina` tag (by @lowne).
+- Added `crypticstack/octal-neko:remmina` tag (by @lowne).
 
 ### Misc {#v2.6-misc}
 - Automatic WebRTC SDP negotiation using onnegotiationneeded handlers. This allows adding/removing track on demand in a session.
@@ -159,11 +159,11 @@ Please note that in this version, only the server has been updated. The client i
 - Font Awesome and Sweetalert2 upgraded to newest major version.
 - Add chinese characters support.
 
-## [n.eko v2.5](https://github.com/m1k1o/neko/releases/tag/v2.5) {#v2.5}
+## [n.eko v2.5](https://github.com/cryptic-stack/octal-neko/releases/tag/v2.5) {#v2.5}
 
 ### Bugs {#v2.5-bugs}
 - Fix ungoogled-chromium auto build bug.
-- Audio on iOS works now! Apparently only for 15+ though [#62](https://github.com/m1k1o/neko/issues/62).
+- Audio on iOS works now! Apparently only for 15+ though [#62](https://github.com/cryptic-stack/octal-neko/issues/62).
 
 ### New Features {#v2.5-feats}
 - Lock controls for users, globally.
@@ -182,11 +182,11 @@ Please note that in this version, only the server has been updated. The client i
 - Sync player play/pause/mute/umpute/volume state with store (beneficial for mobiles when using fullscreen mode).
 - Automatic WebRTC SDP negotiation using `onnegotiationneeded` handlers. This allows adding/removing track on demand in a session.
 
-## [n.eko v2.4](https://github.com/m1k1o/neko/releases/tag/v2.4) {#v2.4}
+## [n.eko v2.4](https://github.com/cryptic-stack/octal-neko/releases/tag/v2.4) {#v2.4}
 
 ### New Features {#v2.4-feats}
 - Show red dot badge on sidebar toggle if there are new messages, and user can't see them.
-- Added `m1k1o/neko:brave` tag.
+- Added `crypticstack/octal-neko:brave` tag.
 
 ### Bugs {#v2.4-bugs}
 - Fixed keyboard mapping on macOS, when CMD could not be used for copy & paste.
@@ -206,7 +206,7 @@ Please note that in this version, only the server has been updated. The client i
 - Refactored RTMP broadcast design #88.
 - Based on Debian 11 #91.
 
-## [n.eko v2.3](https://github.com/m1k1o/neko/releases/tag/v2.3) {#v2.3}
+## [n.eko v2.3](https://github.com/cryptic-stack/octal-neko/releases/tag/v2.3) {#v2.3}
 
 ### New Features {#v2.3-feats}
 - Added simple language picker.
@@ -215,7 +215,7 @@ Please note that in this version, only the server has been updated. The client i
 - Shake keyboard icon if someone attempted to control when is nobody hosting.
 - Support for password protected `NEKO_ICESERVERS` (by @mbattista).
 - Added bunch of translations (🇸🇰, 🇪🇸, 🇸🇪, 🇳🇴, 🇫🇷) by various people.
-- Added `m1k1o/neko:google-chrome` tag.
+- Added `crypticstack/octal-neko:google-chrome` tag.
 
 ### Bugs {#v2.3-bugs}
 - Upgraded and fixed emojis to a new major version.
@@ -230,7 +230,7 @@ Please note that in this version, only the server has been updated. The client i
 - While IP address fetching is now proxy ignored.
 - Start unmuted on reconnects and auto unmute on any control attempt.
 
-## [n.eko v2.2](https://github.com/m1k1o/neko/releases/tag/v2.2) {#v2.2}
+## [n.eko v2.2](https://github.com/cryptic-stack/octal-neko/releases/tag/v2.2) {#v2.2}
 
 ### New Features {#v2.2-feats}
 - Added limited support for some mobile browsers with `playsinline` attribute.
@@ -238,8 +238,8 @@ Please note that in this version, only the server has been updated. The client i
 - Added `MAX_FPS`, where you can specify max WebRTC frame rate. When set to `0`, frame rate won't be capped and you can enjoy your real `60fps` experience. Originally, it was constant at `25fps`.
 - Invite links. You can invite people and they don't need to enter passwords by themselves (and get confused about user accounts that do not exits). You can put your password in URL using `?pwd=<your-password>` and it will be automatically used when logging in.
 - Added `/stats?pwd=<admin>` endpoint to get total active connections, host and members.
-- Added `m1k1o/neko:vlc` tag, use VLC to watch local files together (by @mbattista).
-- Added `m1k1o/neko:xfce` tag, as an non video related showcase (by @mbattista).
+- Added `crypticstack/octal-neko:vlc` tag, use VLC to watch local files together (by @mbattista).
+- Added `crypticstack/octal-neko:xfce` tag, as an non video related showcase (by @mbattista).
 - Added ARM-based images, for Raspberry Pi support (by @mbattista).
 
 ### Bugs {#v2.2-bugs}
@@ -255,11 +255,11 @@ Please note that in this version, only the server has been updated. The client i
 - Upgraded `pion/webrtc` to v3 (by @mbattista).
 - Added `requestFullscreen` compatibility for older browsers.
 - Fixed small lags in video and improved video UX (by @mbattista).
-- Added `m1k1o/neko:vncviewer` tag, use `NEKO_VNC_URL` to specify VNC target and use n.eko as a bridge.
+- Added `crypticstack/octal-neko:vncviewer` tag, use `NEKO_VNC_URL` to specify VNC target and use n.eko as a bridge.
 - Abiltiy to include neko as a component in another Vue.Js project (by @gbrian).
 - Added HEALTHCHECK to Dockerfile.
 
-## [n.eko v2.1](https://github.com/m1k1o/neko/releases/tag/v2.1) {#v2.1}
+## [n.eko v2.1](https://github.com/cryptic-stack/octal-neko/releases/tag/v2.1) {#v2.1}
 
 ### New Features {#v2.1-feats}
 - Clipboard button with text area - for browsers, that don't support clipboard syncing or for HTTP.

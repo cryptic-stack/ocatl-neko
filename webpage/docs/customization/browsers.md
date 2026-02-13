@@ -21,7 +21,7 @@ If you want to persist your browser settings, bookmarks, extensions, and browsin
 ```yaml title="docker-compose.yaml"
 services:
   neko:
-    image: "ghcr.io/m1k1o/neko/firefox:latest"
+    image: "ghcr.io/cryptic-stack/octal-neko/firefox:latest"
     restart: "unless-stopped"
     shm_size: "2gb"
     ports:
@@ -64,7 +64,7 @@ If you want to customize the policy file, you can mount your own policy file to 
 ```yaml title="docker-compose.yaml"
 services:
   neko:
-    image: "ghcr.io/m1k1o/neko/firefox:latest"
+    image: "ghcr.io/cryptic-stack/octal-neko/firefox:latest"
     restart: "unless-stopped"
     shm_size: "2gb"
     ports:
@@ -86,7 +86,7 @@ If you just want to modify the default policy file, you can copy the current pol
 
 ```bash
 # Create a container without starting it
-docker create --name neko ghcr.io/m1k1o/neko/firefox:latest
+docker create --name neko ghcr.io/cryptic-stack/octal-neko/firefox:latest
 # Copy the policy file from the container to your local machine
 docker cp neko:/usr/lib/firefox/distribution/policies.json ./policy.json
 # Remove the container
@@ -97,7 +97,7 @@ Or you can download the default policy file from the repository directly:
 
 ```bash
 # Replace firefox with the browser you are using
-curl -o ./policy.json https://raw.githubusercontent.com/m1k1o/neko/refs/heads/main/apps/firefox/policies.json
+curl -o ./policy.json https://raw.githubusercontent.com/cryptic-stack/octal-neko/refs/heads/main/apps/firefox/policies.json
 ```
 
 If you wish to disable the policies altogether, you can just create an empty JSON file. This will disable all policies and allow you to customize the browser settings as you wish.

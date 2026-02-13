@@ -41,7 +41,7 @@ Neko is easy to use and requires no technical expertise to get started. All you 
 
 5. Download the docker compose file and start it:
     ```shell
-    wget https://raw.githubusercontent.com/m1k1o/neko/master/docker-compose.yaml
+    wget https://raw.githubusercontent.com/cryptic-stack/octal-neko/master/docker-compose.yaml
     sudo docker compose up -d
     ```
 
