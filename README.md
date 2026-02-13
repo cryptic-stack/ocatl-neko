@@ -4,7 +4,7 @@ OCTAL is a security-focused, self-hosted remote browsing platform built for isol
 
 [![Release](https://img.shields.io/github/v/release/cryptic-stack/octal-neko)](https://github.com/cryptic-stack/octal-neko/releases)
 [![License](https://img.shields.io/github/license/cryptic-stack/octal-neko)](https://github.com/cryptic-stack/octal-neko/blob/master/LICENSE)
-[![Docker Pulls](https://img.shields.io/docker/pulls/cryptic-stack/octal-neko)](https://hub.docker.com/r/cryptic-stack/octal-neko)
+[![Docker Pulls](https://img.shields.io/docker/pulls/crypticstack/octal-neko)](https://hub.docker.com/r/crypticstack/octal-neko)
 [![Issues](https://img.shields.io/github/issues/cryptic-stack/octal-neko)](https://github.com/cryptic-stack/octal-neko/issues)
 [![Build](https://github.com/cryptic-stack/octal-neko/actions/workflows/dockerhub.yml/badge.svg)](https://github.com/cryptic-stack/octal-neko/actions/workflows/dockerhub.yml)
 
@@ -38,34 +38,34 @@ OCTAL is maintained as a hardened fork of [m1k1o/neko](https://github.com/m1k1o/
 
 <div align="center">
   <a href="https://neko.m1k1o.net/docs/v3/installation/docker-images#firefox">
-    <img src="https://neko.m1k1o.net/img/icons/firefox.svg" title="docker.io/cryptic-stack/octal-neko:firefox" width="60" height="auto"/>
+    <img src="https://neko.m1k1o.net/img/icons/firefox.svg" title="docker.io/crypticstack/octal-neko:firefox" width="60" height="auto"/>
   </a>
   <a href="https://neko.m1k1o.net/docs/v3/installation/docker-images#tor-browser">
-    <img src="https://neko.m1k1o.net/img/icons/tor-browser.svg" title="docker.io/cryptic-stack/octal-neko:tor-browser" width="60" height="auto"/>
+    <img src="https://neko.m1k1o.net/img/icons/tor-browser.svg" title="docker.io/crypticstack/octal-neko:tor-browser" width="60" height="auto"/>
   </a>
   <a href="https://neko.m1k1o.net/docs/v3/installation/docker-images#waterfox">
-    <img src="https://neko.m1k1o.net/img/icons/waterfox.svg" title="docker.io/cryptic-stack/octal-neko:waterfox" width="60" height="auto"/>
+    <img src="https://neko.m1k1o.net/img/icons/waterfox.svg" title="docker.io/crypticstack/octal-neko:waterfox" width="60" height="auto"/>
   </a>
   <a href="https://neko.m1k1o.net/docs/v3/installation/docker-images#chromium">
-    <img src="https://neko.m1k1o.net/img/icons/chromium.svg" title="docker.io/cryptic-stack/octal-neko:chromium" width="60" height="auto"/>
+    <img src="https://neko.m1k1o.net/img/icons/chromium.svg" title="docker.io/crypticstack/octal-neko:chromium" width="60" height="auto"/>
   </a>
   <a href="https://neko.m1k1o.net/docs/v3/installation/docker-images#google-chrome">
-    <img src="https://neko.m1k1o.net/img/icons/google-chrome.svg" title="docker.io/cryptic-stack/octal-neko:google-chrome" width="60" height="auto"/>
+    <img src="https://neko.m1k1o.net/img/icons/google-chrome.svg" title="docker.io/crypticstack/octal-neko:google-chrome" width="60" height="auto"/>
   </a>
   <a href="https://neko.m1k1o.net/docs/v3/installation/docker-images#ungoogled-chromium">
-    <img src="https://neko.m1k1o.net/img/icons/ungoogled-chromium.svg" title="docker.io/cryptic-stack/octal-neko:ungoogled-chromium" width="60" height="auto"/>
+    <img src="https://neko.m1k1o.net/img/icons/ungoogled-chromium.svg" title="docker.io/crypticstack/octal-neko:ungoogled-chromium" width="60" height="auto"/>
   </a>
   <a href="https://neko.m1k1o.net/docs/v3/installation/docker-images#microsoft-edge">
-    <img src="https://neko.m1k1o.net/img/icons/microsoft-edge.svg" title="docker.io/cryptic-stack/octal-neko:microsoft-edge" width="60" height="auto"/>
+    <img src="https://neko.m1k1o.net/img/icons/microsoft-edge.svg" title="docker.io/crypticstack/octal-neko:microsoft-edge" width="60" height="auto"/>
   </a>
   <a href="https://neko.m1k1o.net/docs/v3/installation/docker-images#brave">
-    <img src="https://neko.m1k1o.net/img/icons/brave.svg" title="docker.io/cryptic-stack/octal-neko:brave" width="60" height="auto"/>
+    <img src="https://neko.m1k1o.net/img/icons/brave.svg" title="docker.io/crypticstack/octal-neko:brave" width="60" height="auto"/>
   </a>
   <a href="https://neko.m1k1o.net/docs/v3/installation/docker-images#vivaldi">
-    <img src="https://neko.m1k1o.net/img/icons/vivaldi.svg" title="docker.io/cryptic-stack/octal-neko:vivaldi" width="60" height="auto"/>
+    <img src="https://neko.m1k1o.net/img/icons/vivaldi.svg" title="docker.io/crypticstack/octal-neko:vivaldi" width="60" height="auto"/>
   </a>
   <a href="https://neko.m1k1o.net/docs/v3/installation/docker-images#opera">
-    <img src="https://neko.m1k1o.net/img/icons/opera.svg" title="docker.io/cryptic-stack/octal-neko:opera" width="60" height="auto"/>
+    <img src="https://neko.m1k1o.net/img/icons/opera.svg" title="docker.io/crypticstack/octal-neko:opera" width="60" height="auto"/>
   </a>
 
   ... see [all available images](https://neko.m1k1o.net/docs/v3/installation/docker-images)
@@ -75,16 +75,16 @@ OCTAL is maintained as a hardened fork of [m1k1o/neko](https://github.com/m1k1o/
 
 <div align="center">
   <a href="https://neko.m1k1o.net/docs/v3/installation/docker-images#xfce">
-    <img src="https://neko.m1k1o.net/img/icons/xfce.svg" title="docker.io/cryptic-stack/octal-neko:xfce" width="60" height="auto"/>
+    <img src="https://neko.m1k1o.net/img/icons/xfce.svg" title="docker.io/crypticstack/octal-neko:xfce" width="60" height="auto"/>
   </a>
   <a href="https://neko.m1k1o.net/docs/v3/installation/docker-images#kde">
-    <img src="https://neko.m1k1o.net/img/icons/kde.svg" title="docker.io/cryptic-stack/octal-neko:kde" width="60" height="auto"/>
+    <img src="https://neko.m1k1o.net/img/icons/kde.svg" title="docker.io/crypticstack/octal-neko:kde" width="60" height="auto"/>
   </a>
   <a href="https://neko.m1k1o.net/docs/v3/installation/docker-images#remmina">
-    <img src="https://neko.m1k1o.net/img/icons/remmina.svg" title="docker.io/cryptic-stack/octal-neko:remmina" width="60" height="auto"/>
+    <img src="https://neko.m1k1o.net/img/icons/remmina.svg" title="docker.io/crypticstack/octal-neko:remmina" width="60" height="auto"/>
   </a>
   <a href="https://neko.m1k1o.net/docs/v3/installation/docker-images#vlc">
-    <img src="https://neko.m1k1o.net/img/icons/vlc.svg" title="docker.io/cryptic-stack/octal-neko:vlc" width="60" height="auto"/>
+    <img src="https://neko.m1k1o.net/img/icons/vlc.svg" title="docker.io/crypticstack/octal-neko:vlc" width="60" height="auto"/>
   </a>
 
   ... others in <a href="https://github.com/m1k1o/neko-apps">m1k1o/neko-apps</a>
